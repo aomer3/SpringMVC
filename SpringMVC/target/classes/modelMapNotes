@@ -1,0 +1,11 @@
+ModelMap
+1. This is an alternative to using ModelAndView object to receive and send data 
+   between the JSP view pages and the controller 
+2. ModelMap came in later iterations of Java after ModelAndView object and it was 
+   made to avoid the tight coupling of ModelAndView object. ModelMap makes it so 
+   you can deal with the model separately, and the view separately. This makes it 
+   possible to just create a view, in the case that there is no data to return instead
+   of creating a ModelAndView object every time. 
+3. The ModelMap is a map that holds key-value pairs, and data can be set to the model
+   by using addAttribute(key, value)
+4. The View is a String

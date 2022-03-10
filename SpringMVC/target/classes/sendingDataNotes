@@ -1,0 +1,30 @@
+Sending Data from Controller to UI
+1. We send data from the controller to the UI using the ModelAndView object
+2. We set data into the ModelAndView object using addObject(key,value) method,
+   where key is a String and value is an Object
+3. Once the data is set and the response goes back to the UI, we can access 
+   the ModelAndView object using the request.getAttribute("key") method from 
+   the servlet pages 
+4. We can set anything into the ModelAndView object from primitives, to objects
+   to even collections
+
+------------------------------------------
+
+Sending Data from the UI to the Controller
+1. Data can be sent from the UI to the Controller in two ways 
+	a. using a HTML form
+		1. When we send data from the HTML form, we can access that data from the 
+		   controller as an object 
+		2. For this process to work, we must first create a object that will hold the
+		   data being received from the HTML form (the number of object fields should 
+		   match the number of HTML fields, and the field names should match also).
+		3. To read the data from the the HTML forms in the controller, we use the 
+		   @ModelAttribute annotation on the controller methods reading the data 
+	b. using query parameters  
+		1. Data is sent using ?key=value&key=value method 
+		2. Once data is sent from UI to controller, @ReqeustParamter("key") DT 
+		   could then be used to retrieve the data and set it into the variable 
+		   ex: @RequestParem("id") int id
+
+
+

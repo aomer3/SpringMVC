@@ -1,0 +1,34 @@
+Spring MVC
+1. Spring MVC is used to create dynamic web pages
+2. It uses three different components to implement the MVC design pattern
+	a. Front Controller 
+		1. implemented by the Dispatcher Servlet
+		2. Dispatcher Servlet - handles the incoming requests from the user 
+		3. We need to configure this dispatcher servlet in the config file
+	b. Handler Mapper
+		1. the DispatcherServlet uses the HandlerMapper (which uses the url
+		   pattern to pass the user request to the correct controller) to 
+		   invoke a controller
+		2. The controller is a POJO class that we create that is marked with the
+		   @Controller annotation
+		3. The controller class will create a ModelAndView (model = data from the 
+		   application, view=response page given back to user). Model is optional 
+		   and dependent on if there's data to be sent back, view is mandatory 
+		   since the end user has to see some response.
+		4. We then return the ModelAndView to the DispatcherServlet, who then 
+		   calls on the View Resolver
+	c. View Resolver 
+		1. The View Resolver takes the View name and appends to it a prefix and
+		   and a suffix (prefix = location of the View file on the server, 
+		   suffix = type of file for the View)
+		2. The View Resolver than returns the view back to the DispatcherServlet
+		   
+		3. The DispatcherServlet takes the View, adds in the Model is there is 
+		   any data to be added to the View, and sends the view back to the user
+
+Creating a Spring MVC app (5 steps):
+1. Configure dispatcher servlet
+2. Configure spring config file
+3. Configure the View Resolver 
+4. Create the controller
+5. Create the folder structure and view (jsp page under Web-Inf)
